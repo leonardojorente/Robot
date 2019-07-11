@@ -1,0 +1,25 @@
+download python27
+https://www.python.org/downloads/
+Windows x86 MSI installer
+editar variaveis de ambiente,variaveis do sistema, path, colocar C:\Python27 e C:\Python27\Scripts
+pyhon --version
+pip install robotframework
+pybot --version
+pip install robotframework-selenium2library
+pip install -U selenium
+install plugin
+file->settings->pluggins
+python community edition
+robot framework support
+run robot framework testcase
+new project ->python project
+download chrome driver da mesma versao do seu chrome
+https://sites.google.com/a/chromium.org/chromedriver/downloads
+https://chromedriver.storage.googleapis.com/index.html?path=76.0.3809.25/
+put the driver on python scripts folder and xtract
+C:\Python27\Scripts
+
+project structure -> sdk ->select pyhton 27 ->ok
+Run the command on prompt de comando
+cd C:\Python27\Scripts
+robot -d C:\Users\leona\IdeaProjects\robotBDD\src\test\TestResult C:\Users\leona\IdeaProjects\robotBDD\src\test\Test\testBDD.robot
