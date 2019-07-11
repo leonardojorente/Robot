@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190711 00:23:11.293" generator="Robot 3.1.2 (Python 2.7.16 on win32)">
+<suite source="C:\Users\leona\IdeaProjects\robotBDD\src\test\Test\testBDD.robot" id="s1" name="testBDD">
+<kw type="setup" name="Open browser and maximize" library="Support">
+<doc>This keyword takes 1-2 arguments, the second is default</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20190711 00:23:12.315" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" endtime="20190711 00:23:18.440" starttime="20190711 00:23:12.315"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20190711 00:23:19.565" starttime="20190711 00:23:18.441"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Browser is maximized</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:19.566" starttime="20190711 00:23:19.565"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:19.566" starttime="20190711 00:23:12.314"></status>
+</kw>
+<test id="s1-t1" name="Testcase1: Create new account">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${emailId}</var>
+</assign>
+<msg timestamp="20190711 00:23:19.568" level="INFO">${emailId} = re</msg>
+<status status="PASS" endtime="20190711 00:23:19.568" starttime="20190711 00:23:19.567"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>test${emailId}@gmail.com</arg>
+</arguments>
+<assign>
+<var>${email}</var>
+</assign>
+<msg timestamp="20190711 00:23:19.568" level="INFO">${email} = testre@gmail.com</msg>
+<status status="PASS" endtime="20190711 00:23:19.568" starttime="20190711 00:23:19.568"></status>
+</kw>
+<kw name="Given the user is in the main screen">
+<kw name="Verify the homepage title" library="BasicPageObject">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://a[text()="${title}"]</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:19.606" starttime="20190711 00:23:19.569"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Home page title verified</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:19.607" starttime="20190711 00:23:19.606"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:19.608" starttime="20190711 00:23:19.569"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:19.608" starttime="20190711 00:23:19.569"></status>
+</kw>
+<kw name="When the user click the loggin button">
+<kw name="Click sign in button" library="MainPageObject">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${SIGN IN BUTTON}</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:19.647" starttime="20190711 00:23:19.610"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN IN BUTTON}</arg>
+</arguments>
+<msg timestamp="20190711 00:23:19.647" level="INFO">Clicking element 'xpath://*[@title='Log in to your customer account']'.</msg>
+<status status="PASS" endtime="20190711 00:23:21.113" starttime="20190711 00:23:19.647"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:21.113" starttime="20190711 00:23:19.610"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:21.114" starttime="20190711 00:23:19.609"></status>
+</kw>
+<kw name="And fill the email with &quot;test${emailId}@gmail.com&quot;">
+<kw name="Insert email" library="LoginPageObject">
+<arguments>
+<arg>${EMAIL}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${EMAIL}</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:21.176" starttime="20190711 00:23:21.116"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${EMAIL}</arg>
+<arg>${email input}</arg>
+</arguments>
+<msg timestamp="20190711 00:23:21.177" level="INFO">Typing text 'testre@gmail.com' into text field 'xpath://*[@id='email_create']'.</msg>
+<status status="PASS" endtime="20190711 00:23:21.338" starttime="20190711 00:23:21.176"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:21.338" starttime="20190711 00:23:21.115"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:21.339" starttime="20190711 00:23:21.114"></status>
+</kw>
+<kw name="And click the create account button">
+<kw name="Click Create account button" library="LoginPageObject">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${SUBMIT CREATE}</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:21.383" starttime="20190711 00:23:21.340"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${SUBMIT CREATE}</arg>
+</arguments>
+<msg timestamp="20190711 00:23:21.384" level="INFO">Clicking element 'xpath://*[@id='SubmitCreate']'.</msg>
+<status status="PASS" endtime="20190711 00:23:21.517" starttime="20190711 00:23:21.383"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:21.517" starttime="20190711 00:23:21.340"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:21.517" starttime="20190711 00:23:21.339"></status>
+</kw>
+<kw name="And fill the all the basic fields with &quot;FirstNameTest&quot; &quot;LastNameTest&quot; &quot;PasswordTest&quot; &quot;AddressTest&quot; &quot;Campinas&quot; &quot;Arizona&quot; &quot;12345&quot; &quot;United States&quot; &quot;551999999999&quot;">
+<kw name="Click title check button" library="CreateAccountPageObject">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[@name='id_gender']</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:22.829" starttime="20190711 00:23:21.518"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@name='id_gender' and @value='1']</arg>
+</arguments>
+<msg timestamp="20190711 00:23:22.830" level="INFO">Clicking element 'xpath://*[@name='id_gender' and @value='1']'.</msg>
+<status status="PASS" endtime="20190711 00:23:22.925" starttime="20190711 00:23:22.829"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:22.926" starttime="20190711 00:23:21.518"></status>
+</kw>
+<kw name="Insert first name" library="CreateAccountPageObject">
+<arguments>
+<arg>${FIRSTNAME}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[@id='customer_firstname']</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:22.968" starttime="20190711 00:23:22.926"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id='customer_firstname']</arg>
+<arg>${firstname}</arg>
+</arguments>
+<msg timestamp="20190711 00:23:22.969" level="INFO">Typing text 'FirstNameTest' into text field 'xpath://*[@id='customer_firstname']'.</msg>
+<status status="PASS" endtime="20190711 00:23:23.245" starttime="20190711 00:23:22.969"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:23.245" starttime="20190711 00:23:22.926"></status>
+</kw>
+<kw name="Insert last name" library="CreateAccountPageObject">
+<arguments>
+<arg>${LASTNAME}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>id:customer_lastname</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:23.301" starttime="20190711 00:23:23.247"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id='customer_lastname']</arg>
+<arg>${lastname}</arg>
+</arguments>
+<msg timestamp="20190711 00:23:23.302" level="INFO">Typing text 'LastNameTest' into text field 'xpath://*[@id='customer_lastname']'.</msg>
+<status status="PASS" endtime="20190711 00:23:23.603" starttime="20190711 00:23:23.301"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:23.603" starttime="20190711 00:23:23.246"></status>
+</kw>
+<kw name="Insert password" library="CreateAccountPageObject">
+<arguments>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>name:passwd</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:23.643" starttime="20190711 00:23:23.604"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@name='passwd']</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20190711 00:23:23.644" level="INFO">Typing text 'PasswordTest' into text field 'xpath://*[@name='passwd']'.</msg>
+<status status="PASS" endtime="20190711 00:23:23.856" starttime="20190711 00:23:23.644"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:23.856" starttime="20190711 00:23:23.603"></status>
+</kw>
+<kw name="Insert address" library="CreateAccountPageObject">
+<arguments>
+<arg>${ADDRESS}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[@id='address1']</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:23.896" starttime="20190711 00:23:23.858"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id='address1']</arg>
+<arg>${adrress}</arg>
+</arguments>
+<msg timestamp="20190711 00:23:23.896" level="INFO">Typing text 'AddressTest' into text field 'xpath://*[@id='address1']'.</msg>
+<status status="PASS" endtime="20190711 00:23:24.087" starttime="20190711 00:23:23.896"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:24.087" starttime="20190711 00:23:23.857"></status>
+</kw>
+<kw name="Insert City" library="CreateAccountPageObject">
+<arguments>
+<arg>${CITY}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[@id='city']</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:24.122" starttime="20190711 00:23:24.087"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id='city']</arg>
+<arg>${city}</arg>
+</arguments>
+<msg timestamp="20190711 00:23:24.123" level="INFO">Typing text 'Campinas' into text field 'xpath://*[@id='city']'.</msg>
+<status status="PASS" endtime="20190711 00:23:24.243" starttime="20190711 00:23:24.123"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:24.243" starttime="20190711 00:23:24.087"></status>
+</kw>
+<kw name="Select State" library="CreateAccountPageObject">
+<arguments>
+<arg>${STATE}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[@id='uniform-id_state']</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:24.275" starttime="20190711 00:23:24.244"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id='uniform-id_state']</arg>
+</arguments>
+<msg timestamp="20190711 00:23:24.276" level="INFO">Clicking element 'xpath://*[@id='uniform-id_state']'.</msg>
+<status status="PASS" endtime="20190711 00:23:24.393" starttime="20190711 00:23:24.275"></status>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>xpath://*[@id='id_state']</arg>
+<arg>${state}</arg>
+</arguments>
+<msg timestamp="20190711 00:23:24.394" level="INFO">Selecting options from selection list 'xpath://*[@id='id_state']' by label Arizona.</msg>
+<status status="PASS" endtime="20190711 00:23:24.537" starttime="20190711 00:23:24.394"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:24.537" starttime="20190711 00:23:24.244"></status>
+</kw>
+<kw name="Insert Zip Code" library="CreateAccountPageObject">
+<arguments>
+<arg>${ZIPCODE}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[@id='postcode']</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:24.570" starttime="20190711 00:23:24.538"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id='postcode']</arg>
+<arg>${postcode}</arg>
+</arguments>
+<msg timestamp="20190711 00:23:24.570" level="INFO">Typing text '12345' into text field 'xpath://*[@id='postcode']'.</msg>
+<status status="PASS" endtime="20190711 00:23:24.692" starttime="20190711 00:23:24.570"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:24.693" starttime="20190711 00:23:24.537"></status>
+</kw>
+<kw name="Select Country" library="CreateAccountPageObject">
+<arguments>
+<arg>${COUNTRY}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[@id='uniform-id_country']</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:24.729" starttime="20190711 00:23:24.693"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id='uniform-id_country']</arg>
+</arguments>
+<msg timestamp="20190711 00:23:24.730" level="INFO">Clicking element 'xpath://*[@id='uniform-id_country']'.</msg>
+<status status="PASS" endtime="20190711 00:23:24.812" starttime="20190711 00:23:24.729"></status>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>xpath://*[@id='id_country']</arg>
+<arg>${country}</arg>
+</arguments>
+<msg timestamp="20190711 00:23:24.813" level="INFO">Selecting options from selection list 'xpath://*[@id='id_country']' by label United States.</msg>
+<status status="PASS" endtime="20190711 00:23:24.882" starttime="20190711 00:23:24.812"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:24.882" starttime="20190711 00:23:24.693"></status>
+</kw>
+<kw name="Insert Mobile Phone" library="CreateAccountPageObject">
+<arguments>
+<arg>${PHONE}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[@id='phone_mobile']</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:24.917" starttime="20190711 00:23:24.883"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id='phone_mobile']</arg>
+<arg>${phone}</arg>
+</arguments>
+<msg timestamp="20190711 00:23:24.917" level="INFO">Typing text '551999999999' into text field 'xpath://*[@id='phone_mobile']'.</msg>
+<status status="PASS" endtime="20190711 00:23:25.100" starttime="20190711 00:23:24.917"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:25.100" starttime="20190711 00:23:24.882"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:25.101" starttime="20190711 00:23:21.517"></status>
+</kw>
+<kw name="And click register button">
+<kw name="Click Register Button" library="CreateAccountPageObject">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[@id='submitAccount']</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:25.143" starttime="20190711 00:23:25.101"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id='submitAccount']</arg>
+</arguments>
+<msg timestamp="20190711 00:23:25.144" level="INFO">Clicking element 'xpath://*[@id='submitAccount']'.</msg>
+<status status="PASS" endtime="20190711 00:23:26.380" starttime="20190711 00:23:25.144"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:26.381" starttime="20190711 00:23:25.101"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:26.381" starttime="20190711 00:23:25.101"></status>
+</kw>
+<kw name="Then I should see the logged user on the screen as &quot;FirstNameTest LastNameTest&quot;">
+<kw name="Check logged user" library="BasicPageObject">
+<arguments>
+<arg>${FIRST LAST NAME}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://Span[text()="${username}"]</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:26.432" starttime="20190711 00:23:26.388"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@title="View my customer account"]</arg>
+</arguments>
+<assign>
+<var>${usermane2}</var>
+</assign>
+<msg timestamp="20190711 00:23:26.471" level="INFO">${usermane2} = FirstNameTest LastNameTest</msg>
+<status status="PASS" endtime="20190711 00:23:26.471" starttime="20190711 00:23:26.433"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${username}</arg>
+<arg>${usermane2}</arg>
+</arguments>
+<status status="PASS" endtime="20190711 00:23:26.471" starttime="20190711 00:23:26.471"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:26.472" starttime="20190711 00:23:26.387"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:26.472" starttime="20190711 00:23:26.386"></status>
+</kw>
+<status status="PASS" endtime="20190711 00:23:26.472" critical="yes" starttime="20190711 00:23:19.566"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190711 00:23:28.700" starttime="20190711 00:23:26.474"></status>
+</kw>
+<doc>This is a basic test using BDD</doc>
+<status status="PASS" endtime="20190711 00:23:28.700" starttime="20190711 00:23:11.297"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="testBDD" pass="1">testBDD</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
